@@ -1,0 +1,37 @@
+What is Provisioners in terraform?
+
+These will be used to execute commands time of resource creation or resource destruction time.
+
+terraform will not store provisioner commands/steps  are not stored in state file.
+
+
+
+Example block:
+
+By default Provisioner code execute at creation time:
+
+resource "null_resource" "dummy_resource"{
+
+    provider "local_exec"{
+
+        command = "echo 'hello' > sample.txt"
+    }
+}
+
+
+Excecute at Destroy time:
+
+resource "null_resource" "dummy_resource"{
+
+    provider "local_exec"{
+        when = destroy
+        command = "echo 'hello' > sample.txt"
+    }
+}
+
+
+Different Type Provisioners:
+
+file
+local_exec
+remote_exec

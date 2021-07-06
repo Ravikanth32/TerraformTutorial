@@ -1,0 +1,24 @@
+Example code for resource:
+
+resource "aws_instance" "web"{
+
+    ami = ""
+    instance_type = ""
+
+}
+
+How to Refer:
+
+aws_instance.web.id
+
+Syntax: 
+
+
+Reserved-keyword Resource-Provided-terraform-Provider arbitrary-name{
+
+    List of Arguments
+}
+
+How to refer:
+
+Resource-Provided-terraform-Provider.arbitrary-name.attribute-name

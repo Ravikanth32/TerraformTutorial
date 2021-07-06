@@ -1,0 +1,25 @@
+Terraform Commands:
+
+init:
+
+dowload all the provider plugins.
+
+validate:
+
+Validate a Terraform configuration (terraform validate)
+
+
+plan:
+
+Reads the Terraform configuration code tells what kind of resources can be created using code and it also validates auth(keys) in setup
+
+
+apply:
+
+Takes you code to execution phase. It will create state file within state(tf.state) file contains all the resource created using the code
+
+
+Destroy:
+
+Destroy(cleaning up) all the resources created by using Terraform code.
+

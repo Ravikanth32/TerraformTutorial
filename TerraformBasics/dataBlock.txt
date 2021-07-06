@@ -1,0 +1,13 @@
+
+Data Source Block:
+
+used get allready created Resource information
+
+data "aws_instance" "my-vm"{
+    id = "12345"
+
+}
+
+How to refer:
+
+data.aws_instance.my-vm

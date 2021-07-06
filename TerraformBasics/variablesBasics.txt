@@ -1,0 +1,100 @@
+There are two types variables in terraform:
+
+Input AND Output
+
+Input variables:
+---------------------------------------
+
+
+How to write Input variable block:
+
+
+variable "my-var"{
+    description = ""
+    type = ""
+    default = ""
+}
+
+
+Refer variable:
+
+var.my-var
+
+
+validation for variable:
+
+
+variable "my-var"{
+    description = "My Test Variable"
+    type = string
+    default = "Hello"
+    validation{
+        condition = length(var.my-var) > 4
+        error-message = "The string must be more than 4 characters"
+    }
+
+    //
+    sensitive = true/false
+}
+
+Different variable types:
+
+Basic types:
+
+string
+number
+bool
+
+complex types:
+
+list
+set 
+map
+object
+tuple
+
+
+List Type example:
+
+
+variable "avilability_zone_names"{
+
+    type = list(string)
+    default = ["us-east-1a"]
+
+}
+
+
+
+Object Type Example:
+
+variable "docker_ports"{
+
+    type = object({
+        internal = number
+        external = number
+        proctocal = string
+    })
+
+    default = {
+        internal: 8080
+        external: 9090
+        proctocal: "http"
+    }
+
+}
+
+
+Output variables:
+---------------------------------------
+
+
+output "instance_ip"{
+    description = "instance private ip"
+    value = aws_instance.my-vm.private_ip  //Required
+    sensitive = true/false //By default false
+
+}
+
+Output variables return types after infra excecution and showed in Shell(command line)
+after excecution
